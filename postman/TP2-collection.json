@@ -1,0 +1,131 @@
+{
+  "info": {
+    "name": "TP2 - API REST distribuee",
+    "description": "Collection de tests du TP2 : ServiceEtudiants (8081) et ServiceCours (8082)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1 - Creer etudiant",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nom\":\"Sara\",\"email\":\"sara@u.com\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "http://localhost:8081/etudiants",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["etudiants"]
+        }
+      }
+    },
+    {
+      "name": "2 - Lister etudiants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/etudiants",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["etudiants"]
+        }
+      }
+    },
+    {
+      "name": "3 - Creer cours",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titre\":\"Prog 3\",\"etudiantId\":1}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "http://localhost:8082/cours",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["cours"]
+        }
+      }
+    },
+    {
+      "name": "4 - Lister cours",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/cours",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["cours"]
+        }
+      }
+    },
+    {
+      "name": "5 - Cours enrichis",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/cours/enrichis",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["cours", "enrichis"]
+        }
+      }
+    },
+    {
+      "name": "6 - Supprimer etudiant",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/etudiants/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["etudiants", "1"]
+        }
+      }
+    },
+    {
+      "name": "7 - Etudiant inexistant (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/etudiants/99",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["etudiants", "99"]
+        }
+      }
+    },
+    {
+      "name": "8 - Cours inexistant (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/cours/99",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["cours", "99"]
+        }
+      }
+    }
+  ]
+}
